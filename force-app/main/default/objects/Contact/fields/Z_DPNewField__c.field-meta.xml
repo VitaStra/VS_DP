@@ -6,6 +6,6 @@
     <externalId>false</externalId>
     <inlineHelpText>This is new field</inlineHelpText>
     <label>Z DP NewField</label>
-    <trackTrending>false</trackTrending>
+    <trackFeedHistory>false</trackFeedHistory>
     <type>Checkbox</type>
 </CustomField>
