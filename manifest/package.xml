@@ -25,6 +25,9 @@
         <name>AuraDefinitionBundle</name>
     </types>
     <types>
+        <members>Contact</members>
+    </types>
+    <types>
         <members>*</members>
         <name>LightningComponentBundle</name>
     </types>
