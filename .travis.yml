@@ -3,7 +3,7 @@ os: trusty
 cache: false
 notifications:
   email:
-    - v.strajt@google.com
+    - v.strajt@gmail.com
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
