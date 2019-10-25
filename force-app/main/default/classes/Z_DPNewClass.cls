@@ -8,6 +8,5 @@ public class Z_DPNewClass {
         Contact newCon = new Contact(LastName = 'Test');
         newCon.Z_DPNewField__c = getIsForDP();
         insert newCon;
-        thisIsGoingToCauseErrorOnCompilation
     }
 }
