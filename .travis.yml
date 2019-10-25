@@ -3,6 +3,7 @@ os: trusty
 cache: false
 notifications:
   email:
+    recipients:
     - v.strajt@gmail.com
     - xstrv30@vse.cz
     on_success: always  
