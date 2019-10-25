@@ -4,6 +4,7 @@ cache: false
 notifications:
   email:
     - v.strajt@gmail.com
+    - xstrv30@vse.cz
     on_success: always  
     on_failure: always
 env:
