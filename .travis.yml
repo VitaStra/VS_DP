@@ -29,5 +29,5 @@ script:
   4
 - sfdx force:org:display -u ciorg
 - sfdx force:source:push -u ciorg
-- sfdx force:apex:test:run -u ciorg --wait 10 -c true
+- sfdx force:apex:test:run -u ciorg --wait 10 --codecoverage
 - sfdx force:org:delete -u ciorg -p
