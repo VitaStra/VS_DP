@@ -3,7 +3,7 @@ public class Z_DPNewClass_Test {
 
 
     static testMethod void runUnitTest(){
-        System.assertEquals(true, Z_DPNewClass.getIsForDP());
+        System.assertEquals(false, Z_DPNewClass.getIsForDP());
     }
 
     static testMethod void runRegressionTest(){
