@@ -25,6 +25,6 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
-- sfdx force:org:display
+- sfdx force:org:display -u HubOrg
 - sfdx force:source:push
 - sfdx force:apex:test:run --wait 10 --codecoverage --resultformat human
