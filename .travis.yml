@@ -21,12 +21,12 @@ before_install:
 - wget -qO- $URL | tar xJ -C sfdx --strip-components 1
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
-- export DEPLOYDIR=src
+- dir
 - sfdx --version
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
 - sfdx force:org:display -u HubOrg
-- sfdx force:source:deploy -u HubOrg -p $DEPLOYDIR
+- sfdx force:source:deploy -u HubOrg -p force-app/main
 - sfdx force:apex:test:run -u HubOrg --wait 10 --codecoverage --resultformat human
