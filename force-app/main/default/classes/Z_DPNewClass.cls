@@ -5,6 +5,7 @@ public class Z_DPNewClass {
     }
 
     public static Boolean anotherMethod(){
+        System.debug('retruns [ ' + false + ' ]');
         return false;
     }
 
