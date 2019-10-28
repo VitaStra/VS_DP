@@ -6,6 +6,10 @@ public class Z_DPNewClass_Test {
         System.assertEquals(true, Z_DPNewClass.getIsForDP());
     }
 
+    static testMethod void runUnitTest2(){
+        System.assertNotEquals(false, Z_DPNewClass.getIsForDP());
+    }
+
     static testMethod void runRegressionTest(){
 
         Test.startTest();
