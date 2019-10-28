@@ -11,6 +11,7 @@ notifications:
 env:
 - URL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
 before_install:
+#Assign variables
 - export SFDX_AUTOUPDATE_DISABLE=false
 - export SFDX_USE_GENERIC_UNIX_KEYCHAIN=true
 - export SFDX_DOMAIN_RETRY=300
@@ -20,11 +21,12 @@ before_install:
 - wget -qO- $URL | tar xJ -C sfdx --strip-components 1
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
+- export DEPLOYDIR=src
 - sfdx --version
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
 - sfdx force:org:display -u HubOrg
-- sfdx force:source:deploy -u HubOrg -p .\force-app\
+- sfdx force:source:deploy -u HubOrg -p $DEPLOYDIR
 - sfdx force:apex:test:run -u HubOrg --wait 10 --codecoverage --resultformat human
