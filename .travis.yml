@@ -29,5 +29,5 @@ before_install:
 script:
 - sfdx force:org:display -u HubOrg
 - sfdx force:source:deploy -u HubOrg -p force-app/main
-- sfdx force:mdapi:deploy -d destroy -w 1
+- sfdx force:mdapi:deploy -d destroy -w 1 -u $USERNAME
 - sfdx force:apex:test:run -u HubOrg --wait 10 --codecoverage --resultformat human
