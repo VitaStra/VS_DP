@@ -21,12 +21,13 @@ before_install:
 - wget -qO- $URL | tar xJ -C sfdx --strip-components 1
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
-- dir
 - sfdx --version
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
-- sfdx force:org:display -u HubOrg
-- sfdx force:source:deploy -u HubOrg -p force-app/main
-- sfdx force:apex:test:run -u HubOrg --wait 10 --codecoverage --resultformat human
+- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg -d 60 --wait 4
+- sfdx force:org:display -u ciorg
+- sfdx force:source:push -u ciorg
+- sfdx force:apex:test:run -u ciorg --wait 10 --codecoverage --resultformat human
+- sfdx force:org:delete -u ciorg -p
