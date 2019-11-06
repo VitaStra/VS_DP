@@ -10,3 +10,8 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Specify a specific folder
+**/force-app-one/**
+**/force-app-two/**
+**/force-app-three/**
