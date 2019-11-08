@@ -13,5 +13,6 @@ package.xml
 
 # Specify a specific folder
 **/force-app/**
+**/force-app-one/**
 **/force-app-two/**
 **/force-app-three/**
