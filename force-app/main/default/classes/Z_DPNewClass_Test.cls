@@ -1,7 +1,7 @@
 @isTest
 public class Z_DPNewClass_Test {
 
-
+    // Random test method
     static testMethod void runUnitTest(){
         System.assertEquals(true, Z_DPNewClass.getIsForDP());
     }
