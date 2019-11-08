@@ -17,7 +17,6 @@ public class Z_DPNewClass_Test {
         Test.stopTest();
 
         List<Contact> conList = [SELECT Id, Z_DPNewField__c FROM Contact];
-        System.debug(conList);
         System.assertEquals(1, conList.size());
         System.assertEquals(true, conList[0].Z_DPNewField__c);
 
