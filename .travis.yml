@@ -26,8 +26,10 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
-- sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait 4
-- sfdx force:org:display -u ciorg
-- sfdx force:source:push -u ciorg
-- sfdx force:apex:test:run -u ciorg --wait 10 --codecoverage --resultformat human
-- sfdx force:org:delete -u ciorg -p
+- sfdx force:org:display -u HubOrg
+- sfdx force:source:deploy -u HubOrg -p force-app/main
+- sfdx force:source:deploy -u HubOrg -p force-app-one/main
+- sfdx force:source:deploy -u HubOrg -p force-app-two/main
+- sfdx force:source:deploy -u HubOrg -p force-app-three/main
+- sfdx force:mdapi:deploy -d destroy -w 1 -u $USERNAME
+- sfdx force:apex:test:run -u HubOrg --wait 10 --codecoverage --resultformat human
